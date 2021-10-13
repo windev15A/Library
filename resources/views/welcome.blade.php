@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="container id="app">
+    <div class="container " id="app">
         <div class="row">
             <div class="col-6 d-inline-flex">
                 <img src="{{asset('/images/index.svg')}}" height="400px" width="600px"  alt="book"/>

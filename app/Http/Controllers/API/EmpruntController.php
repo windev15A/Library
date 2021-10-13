@@ -105,7 +105,7 @@ class EmpruntController extends Controller
             $livres[]= ['book'=>Livre::find($archive->livre_id), 'info'=>$archive] ;
         }
 
-return Response()->json(['archives' => $livres]);
+        return Response()->json(['archives' => $livres]);
     }
 
 

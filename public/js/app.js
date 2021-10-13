@@ -7439,27 +7439,82 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       mode: false,
       categorie: {
-        id: '',
-        libCat: ''
+        id: "",
+        libCat: ""
       },
       categories: {}
     };
   },
   methods: {
     openModel: function openModel() {
-      $('#addNew').modal('show');
+      $("#addNew").modal("show");
       this.mode = false;
     },
     getCategories: function getCategories() {
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get('api/categories?page=' + page).then(function (response) {
+      axios.get("api/categories?page=" + page).then(function (response) {
         _this.categories = response.data;
       })["catch"](function (error) {
         console.log(error);
@@ -7468,19 +7523,19 @@ __webpack_require__.r(__webpack_exports__);
     newCat: function newCat() {
       var _this2 = this;
 
-      axios.post('api/categories', this.categorie).then(function (response) {
+      axios.post("api/categories", this.categorie).then(function (response) {
         if (response.data.etat) {
-          $('#addNew').modal('hide');
+          $("#addNew").modal("hide");
           _this2.categorie = {
-            id: '',
-            libCat: ''
+            id: "",
+            libCat: ""
           };
 
           _this2.getCategories();
 
           toast.fire({
-            icon: 'success',
-            title: 'Catégorie créer avec succès'
+            icon: "success",
+            title: "Catégorie créer avec succès"
           });
         }
       })["catch"](function (error) {
@@ -7490,18 +7545,18 @@ __webpack_require__.r(__webpack_exports__);
     updateCat: function updateCat() {
       var _this3 = this;
 
-      axios.put('api/categories/' + this.categorie.id, this.categorie).then(function (response) {
+      axios.put("api/categories/" + this.categorie.id, this.categorie).then(function (response) {
         if (response.data.etat) {
           _this3.getCategories();
 
-          $('#addNew').modal('hide');
+          $("#addNew").modal("hide");
           _this3.categorie = {
-            id: '',
-            libCat: ''
+            id: "",
+            libCat: ""
           };
           toast.fire({
-            icon: 'success',
-            title: 'Catégorie modifier avec succès'
+            icon: "success",
+            title: "Catégorie modifier avec succès"
           });
         }
       })["catch"](function (error) {
@@ -7509,35 +7564,35 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     edit: function edit(categorie) {
-      $('#addNew').modal('show');
+      $("#addNew").modal("show");
       this.mode = true;
       this.categorie = categorie;
     },
     annulerCat: function annulerCat() {
       this.categorie = {
-        id: '',
-        libCat: ''
+        id: "",
+        libCat: ""
       };
     },
     deleteCat: function deleteCat(id, lib) {
       var _this4 = this;
 
       swal.fire({
-        title: 'Voulez-vous ',
+        title: "Voulez-vous ",
         text: "Vraiment supprimer la catégorie " + lib + " ?",
-        icon: 'warning',
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Oui supprimer!'
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Oui supprimer!"
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('api/categories/' + id).then(function () {
-            swal.fire('Supprimé!', 'La catégorie est Supprimé avec succès', 'success');
+          axios["delete"]("api/categories/" + id).then(function () {
+            swal.fire("Supprimé!", "La catégorie est Supprimé avec succès", "success");
 
             _this4.getCategories();
           })["catch"](function () {
-            swal.fire('Non supprimer!', 'Erreur serveur', 'error');
+            swal.fire("Non supprimer!", "Erreur serveur", "error");
           });
         }
       });
@@ -8704,6 +8759,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8817,7 +8875,7 @@ __webpack_require__.r(__webpack_exports__);
       this.user = user;
     },
     formatDate: function formatDate(date) {
-      return moment(date).format('DD MMMM YYYY h:mm:ss');
+      return moment(date).format("DD MMMM YYYY h:mm:ss");
     }
   },
   mounted: function mounted() {
@@ -67631,7 +67689,11 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Nouveau +")]
+                  [
+                    _vm._v(
+                      "\n                                Nouveau +\n                            "
+                    )
+                  ]
                 )
               ])
             ])
@@ -67728,7 +67790,9 @@ var render = function() {
               _c("div", { staticClass: "modal-header" }, [
                 !_vm.mode
                   ? _c("h5", { staticClass: "modal-title" }, [
-                      _vm._v("Nouvelle catégorie")
+                      _vm._v(
+                        "\n                        Nouvelle catégorie\n                    "
+                      )
                     ])
                   : _c("h5", { staticClass: "modal-title" }, [
                       _vm._v("Modifier catégorie")
@@ -67795,7 +67859,11 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Annuler\n                            ")]
+                        [
+                          _vm._v(
+                            "\n                                Annuler\n                            "
+                          )
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
@@ -67812,7 +67880,11 @@ var render = function() {
                           staticClass: "btn btn-success",
                           attrs: { type: "submit" }
                         },
-                        [_vm._v("Ajouter")]
+                        [
+                          _vm._v(
+                            "\n                                Ajouter\n                            "
+                          )
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
@@ -67829,7 +67901,11 @@ var render = function() {
                           staticClass: "btn btn-primary",
                           attrs: { type: "submit" }
                         },
-                        [_vm._v("Modifier")]
+                        [
+                          _vm._v(
+                            "\n                                Modifier\n                            "
+                          )
+                        ]
                       )
                     ])
                   ])
@@ -67853,7 +67929,9 @@ var staticRenderFns = [
           staticClass: "fa fa-list-alt",
           attrs: { "aria-hidden": "true" }
         }),
-        _vm._v(" Liste catégories")
+        _vm._v(
+          "\n                                Liste catégories\n                            "
+        )
       ])
     ])
   }
@@ -68042,7 +68120,7 @@ var staticRenderFns = [
     return _c("p", { staticClass: "card-text" }, [
       _c(
         "a",
-        { staticClass: "small-box-footer", attrs: { href: "categorie" } },
+        { staticClass: "small-box-footer", attrs: { href: "categories" } },
         [
           _vm._v("plus d'infos "),
           _c("i", { staticClass: "fa fa-arrow-circle-right" })
@@ -68646,61 +68724,59 @@ var render = function() {
                         "tbody",
                         { staticClass: "text-center" },
                         _vm._l(adherent.livres, function(livre) {
-                          return livre.pivot.rendu === 0
-                            ? _c("tr", { key: livre.id }, [
-                                _c("td", [_vm._v(_vm._s(livre.titre))]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  livre.pivot.rendu === 0
-                                    ? _c(
-                                        "span",
-                                        { staticClass: "badge badge-danger" },
-                                        [_vm._v("A rendre")]
-                                      )
-                                    : _c(
-                                        "span",
-                                        { staticClass: "badge badge-primary" },
-                                        [_vm._v("Rendu")]
-                                      )
-                                ]),
-                                _vm._v(" "),
-                                _c("td", { staticClass: "text-center" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "btn btn-warning",
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.editLivre(livre)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                        Editer\n                                    "
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "btn btn-danger",
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.deleteLivre(livre)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                        Rendre\n                                    "
-                                      )
-                                    ]
+                          return _c("tr", { key: livre.id }, [
+                            _c("td", [_vm._v(_vm._s(livre.titre))]),
+                            _vm._v(" "),
+                            _c("td", [
+                              livre.pivot.rendu === 0
+                                ? _c(
+                                    "span",
+                                    { staticClass: "badge badge-danger" },
+                                    [_vm._v("A rendre")]
                                   )
-                                ])
-                              ])
-                            : _vm._e()
+                                : _c(
+                                    "span",
+                                    { staticClass: "badge badge-primary" },
+                                    [_vm._v("Rendu")]
+                                  )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "btn btn-warning",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.editLivre(livre)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Editer\n                                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "btn btn-danger",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.deleteLivre(livre)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Rendre\n                                    "
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
                         }),
                         0
                       )
@@ -70084,9 +70160,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-10" }, [
       _c("h3", [
         _c("i", { staticClass: "fas fa-book " }),
-        _vm._v(
-          " Liste des\n                        utilisateur\n                    "
-        )
+        _vm._v(" Liste des utilisateur\n                    ")
       ])
     ])
   },
@@ -86209,8 +86283,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\wamp64\www\Laravel6\Library\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\wamp64\www\Laravel6\Library\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\wamp646\Library\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\wamp646\Library\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

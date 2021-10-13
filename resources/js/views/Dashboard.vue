@@ -21,7 +21,7 @@
                     <div class="card-header"><h3><i class="fa fa-align-justify" aria-hidden="true"></i> Catégories</h3></div>
                     <div class="card-body">
                         <h5 class="card-title">{{this.chiffres.categorie}} Catégories</h5>
-                        <p class="card-text"><a href="categorie" class="small-box-footer">plus d'infos <i class="fa fa-arrow-circle-right"></i></a></p>
+                        <p class="card-text"><a href="categories" class="small-box-footer">plus d'infos <i class="fa fa-arrow-circle-right"></i></a></p>
                     </div>
                 </div>
             </div>
